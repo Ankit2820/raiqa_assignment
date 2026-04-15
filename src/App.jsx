@@ -5,7 +5,7 @@ import SelectedMeals from "./components/SelectedMeals"
 import FilterToggle from "./components/FilterToggle";
 import mealsData from "./data/mealData";
 function App() {
-  const [showAvailableOnly, setShowAvailableOnly] = useState(true);
+  const [showAvailableOnly, setShowAvailableOnly] = useState(false);
   const [selectedMeals, setSelectedMeals] = useState(() => {
   const saved = localStorage.getItem("selectedMeals");
   return saved ? JSON.parse(saved) : [];
