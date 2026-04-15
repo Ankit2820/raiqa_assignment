@@ -17,12 +17,9 @@ function App() {
 useEffect(() => {
   localStorage.setItem("selectedMeals", JSON.stringify(selectedMeals));
 }, [selectedMeals]);
-  // ✅ Sort
   filteredMeals = [...filteredMeals].sort((a, b) =>
     sortOrder === "asc" ? a.price - b.price : b.price - a.price
   );
-
-  // ✅ Add (no duplicates)
   const handleAddMeal = (meal) => {
     const exists = selectedMeals.find(m => m.id === meal.id);
     if (exists) return;
@@ -32,7 +29,6 @@ useEffect(() => {
 const handleReset = () => {
   setSelectedMeals([]);
 };
-  // ✅ Toggle sort
   const toggleSort = () => {
     setSortOrder(prev => (prev === "asc" ? "desc" : "asc"));
   };
