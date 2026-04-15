@@ -3,8 +3,6 @@ function SelectedMeals({ selectedMeals, onReset }) {
     (sum, meal) => sum + meal.price,
     0
   );
-
-  // ✅ Find min & max price
   const prices = selectedMeals.map(m => m.price);
   const maxPrice = Math.max(...prices);
   const minPrice = Math.min(...prices);
@@ -13,8 +11,6 @@ function SelectedMeals({ selectedMeals, onReset }) {
     <div className="mt-10 bg-white p-5 rounded shadow">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Selected Meals</h2>
-
-        {/* ✅ Reset Button */}
         {selectedMeals.length > 0 && (
           <button
             onClick={onReset}
